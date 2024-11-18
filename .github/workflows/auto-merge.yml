@@ -9,7 +9,7 @@ jobs:
   auto-approve:
     runs-on: ubuntu-latest
     # if: ${{ github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'Bump') && !contains(github.event.pull_request.title, 'major') }}
-    if: github.event.label.name == 'hello'
+    # if: github.event.label.name == 'hello'
     steps:
       - name: Auto-approve Dependabot PR
         uses: hmarr/auto-approve-action@v2
@@ -20,7 +20,7 @@ jobs:
     needs: auto-approve
     runs-on: ubuntu-latest
     # if: ${{ github.actor == 'dependabot[bot]' && contains(github.event.pull_request.title, 'Bump') && !contains(github.event.pull_request.title, 'major') }}
-    if: github.event.label.name == 'hello'
+    # if: github.event.label.name == 'hello'
     steps:
       - name: Auto-merge Dependabot PR
         uses: peter-evans/merge-pull-request@v2
